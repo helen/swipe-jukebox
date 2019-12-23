@@ -10,6 +10,10 @@ while read -ep "Swipe: " INPUT; do
 		continue
 	fi
 
+	if [[ "$ID" -eq "000" ]]; then
+		mpc toggle
+	fi
+
 	URI=$( sed "${ID}q;d" songs.txt )
 
 	if [[ -z "$URI" ]]; then
