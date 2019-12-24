@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Update songs list
+curl https://raw.githubusercontent.com/helen/swipe-jukebox/master/songs.txt > songs.txt
+
 echo "Jukebox started!"
 
 while read -ep "Swipe: " INPUT; do
