@@ -12,7 +12,12 @@ while read -ep "Swipe: " INPUT; do
 
 	if [[ "$ID" -eq "000" ]]; then
 		mpc toggle
+		continue
 	fi
+
+	ID=$( echo $ID | sed 's/^0*//' )
+
+	echo $ID
 
 	URI=$( sed "${ID}q;d" songs.txt )
 
